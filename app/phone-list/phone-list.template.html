@@ -11,13 +11,21 @@
         <input id="query" class="form-control" ng-model="$ctrl.query"/>
       </div>
 
+      <div class="form-group">
+        <label for="sort-by">Sort by</label>
+        <select id="sort-by" class="form-control" ng-model="$ctrl.orderProp">
+          <option value="name">Alphabetical</option>
+          <option value="age">Newest</option>
+        </select>
+      </div>
+
     </div>
     <div class="col-md-10">
       <!--Body content-->
 
       <h2>Phones</h2>
       <ul class="list-group phones">
-        <li class="list-group-item" ng-repeat="phone in $ctrl.phones | filter:$ctrl.query">
+        <li class="list-group-item" ng-repeat="phone in $ctrl.phones | filter: $ctrl.query | orderBy: $ctrl.orderProp">
           <span>{{phone.name}}</span>
           <p>{{phone.snippet}}</p>
         </li>
