@@ -3,6 +3,8 @@ var phonecatApp = angular.module('phonecatApp', []);
 phonecatApp.controller('PhoneListController', [
   '$scope',
   function($scope) {
+    $scope.name = 'Phones Index';
+
     $scope.phones = [
       {
         name: 'Nexus S',
