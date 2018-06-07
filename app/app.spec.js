@@ -1,18 +1,17 @@
-describe('PhoneListController', function() {
+describe('phoneList', function() {
 
+  // Load the module that contains the `phoneList` component before each test
   beforeEach(module('phonecatApp'));
 
-  it('creates a `phones` model with 3 phones', inject(function($controller) {
-    var scope = {};
-    var ctrl = $controller('PhoneListController', {$scope: scope});
+  // Test the controller
+  describe('PhoneListController', function() {
 
-    expect(scope.phones.length).toBe(3);
-  }));
+    it('should create a `phones` model with 3 phones', inject(function($componentController) {
+      var ctrl = $componentController('phoneList');
 
-  it('has a name model with the page title', inject(function($controller) {
-    var scope = {};
-    var ctrl = $controller('PhoneListController', { $scope: scope });
-    expect(scope.name).toBe('Phones Index');
-  }));
+      expect(ctrl.phones.length).toBe(3);
+    }));
+
+  });
 
 });
