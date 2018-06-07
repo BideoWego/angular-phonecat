@@ -27,11 +27,11 @@
       <ul class="list-group phones">
         <li class="list-group-item thumbnail" ng-repeat="phone in $ctrl.phones |
           filter: $ctrl.query |
-          orderBy:$ctrl.orderProp as filtered">
-          <a href="/#/phones/{{ phone.id }}" class="thumb">
+          orderBy: $ctrl.orderProp as filtered">
+          <a ng-href="/#!/phones/{{ phone.id }}" class="thumb">
             <img ng-src="{{ phone.imageUrl }}" alt="{{ phone.name }}">
           </a>
-          <a href="/#/phones/{{ phone.id }}">
+          <a ng-href="/#!/phones/{{ phone.id }}">
             <span>{{phone.name}}</span>
           </a>
           <p>{{phone.snippet}}</p>

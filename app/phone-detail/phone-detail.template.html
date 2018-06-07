@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <header class="page-header text-center">
+    <h1>Phone Detail</h1>
+  </header>
+
+  <div ng-if="!$ctrl.phone" class="alert alert-danger">
+    Phone not found :(
+  </div>
+
+  <div ng-if="$ctrl.phone">
+    <p>TBD: Detail view for <code>{{ $ctrl.phone.id }}</code></p>
+  </div>
+</div>

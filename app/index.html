@@ -1,18 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" ng-app="phonecatApp">
   <head>
     <meta charset="utf-8">
     <title>My HTML File</title>
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
     <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-route/angular-route.js"></script>
     <script src="/app.module.js"></script>
+    <script src="/app.config.js"></script>
     <script src="/phone-list/phone-list.module.js"></script>
     <script src="/phone-list/phone-list.component.js"></script>
+    <script src="/phone-detail/phone-detail.module.js"></script>
+    <script src="/phone-detail/phone-detail.component.js"></script>
   </head>
   <body>
 
+    <header class="page-header text-center">
+      <h1>
+        <a href="/">PhoneCat App</a>
+      </h1>
+    </header>
+
     <main class="container">
-      <phone-list></phone-list>
+      <div ng-view></div>
     </main>
 
   </body>
