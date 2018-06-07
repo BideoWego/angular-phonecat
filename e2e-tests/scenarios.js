@@ -10,7 +10,7 @@ describe('PhoneCat Application', function() {
       var phoneList = element.all(by.repeater('phone in $ctrl.phones'));
       var query = element(by.model('$ctrl.query'));
 
-      expect(phoneList.count()).toBe(3);
+      expect(phoneList.count()).toBe(2);
 
       // query.sendKeys('nexus');
       // expect(phoneList.count()).toBe(1);

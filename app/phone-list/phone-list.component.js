@@ -3,26 +3,20 @@ angular.
   module('phoneList')
   .component('phoneList', {
     templateUrl: '/phone-list/phone-list.template.html',
-    controller: function PhoneListController() {
+    controller: [
+      '$http',
+      function($http) {
+        var that = this;
+        this.phones = [];
 
-      // Phones
-      this.phones = [
-        {
-          name: 'Nexus S',
-          snippet: 'Fast just got faster with Nexus S.',
-          age: 1
-        }, {
-          name: 'Motorola XOOM™ with Wi-Fi',
-          snippet: 'The Next, Next Generation tablet.',
-          age: 2
-        }, {
-          name: 'MOTOROLA XOOM™',
-          snippet: 'The Next, Next Generation tablet.',
-          age: 3
-        }
-      ];
+        // Phones
+        $http.get('/phones/phones.json')
+          .then(function(res) {
+            angular.copy(res.data, that.phones);
+          });
 
-      // Sorting
-      this.orderProp = 'age';
-    }
+        // Sorting
+        this.orderProp = 'age';
+      }
+    ]
   });

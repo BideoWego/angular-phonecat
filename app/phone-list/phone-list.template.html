@@ -25,12 +25,12 @@
 
       <h2>Phones</h2>
       <ul class="list-group phones">
-        <li class="list-group-item" ng-repeat="phone in $ctrl.phones | filter: $ctrl.query | orderBy: $ctrl.orderProp">
+        <li class="list-group-item" ng-repeat="phone in $ctrl.phones | filter: $ctrl.query | orderBy:$ctrl.orderProp as filtered">
           <span>{{phone.name}}</span>
           <p>{{phone.snippet}}</p>
         </li>
       </ul>
-      <p class="text-danger" ng-if="!$ctrl.phones.length">No phones :(</p>
+      <p class="text-danger" ng-if="!filtered.length">No phones :(</p>
 
     </div>
   </div>
