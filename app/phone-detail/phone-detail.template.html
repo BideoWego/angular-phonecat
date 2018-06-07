@@ -3,11 +3,36 @@
     <h1>Phone Detail</h1>
   </header>
 
+  <!-- Phone not found -->
   <div ng-if="!$ctrl.phone" class="alert alert-danger">
     Phone not found :(
   </div>
 
-  <div ng-if="$ctrl.phone">
-    <p>TBD: Detail view for <code>{{ $ctrl.phone.id }}</code></p>
-  </div>
+  <!-- Phone Details -->
+  <img ng-src="{{$ctrl.phone.images[0]}}" class="phone" />
+
+  <h1>{{$ctrl.phone.name}}</h1>
+
+  <p>{{$ctrl.phone.description}}</p>
+
+  <ul class="list-group phone-thumbs">
+    <li class="list-group-item" ng-repeat="img in $ctrl.phone.images">
+      <img ng-src="{{img}}" />
+    </li>
+  </ul>
+
+  <ul class="list-group specs">
+    <li class="list-group-item">
+      <span>Availability and Networks</span>
+      <dl>
+        <dt>Availability</dt>
+        <dd ng-repeat="availability in $ctrl.phone.availability">{{availability}}</dd>
+      </dl>
+    </li>
+    ...
+    <li class="list-group-item">
+      <span>Additional Features</span>
+      <dd>{{$ctrl.phone.additionalFeatures}}</dd>
+    </li>
+  </ul>
 </div>
